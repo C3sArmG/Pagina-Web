@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="preload" href="css/stylesheet.css" as="style">
+    <title>Proyecto - Mate Computacional</title> 
+</head>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+  
+<body>
+   
+  
+    <header>
+        <div class="imagen">
+            <img src="{{ url_for('static', filename='images/upc.png') }}">
+            <h1> Universidad Peruana de Ciencias Aplicadas</h1>
+        </div>
+    </header>
+
+    <div class=" nav-bg">
+        <nav class="navegacion contenedor">
+            <a href="" class="nav-link">Inicio</a>
+            <a href="" class="nav-link">Sobre Nosotros</a>
+            <a href="" class="nav-link">Contacto</a>
+        </nav>
+    </div>
+    
+<section class="hero">
+        <div class="contenido-hero">
+            <h2 class="title">PROYECTO DE MATEMATICA COMPUTACIONAL</h2>
+                <p>
+                    ¡Hola a todos los usuarios de esta página web de criptografía! Como modelo de lenguaje, estoy diseñado para ayudar en cualquier tema relacionado con el lenguaje
+                    natural, y me complace poder saludarlos hoy en este espacio dedicado a la criptografía. La criptografía es una rama fascinante de la seguridad informática,
+                    que utiliza técnicas de codificación y descodificación de información para protegerla de posibles ataques.
+                </p>
+            <button class="boton1" onclick="mostrarOpciones('opciones1')">ENCRIPTAR</button>
+            <div id="opciones1" class="ventana1">
+                <button class="close-btn1">&times;</button>
+                <form action="/Encriptado" method="POST" enctype="multipart/form-data">
+                    <div class="Text_Dentro" >
+                        <label>Correo Electrónico:</label>
+                        <input type="email" name="correo" required>
+                    </div>
+                    <div class="Text_Dentro" >
+                        <label for="archivo">Archivo:</label>
+                        <input type="file" id="uploadFile" name="uploadFile" accept=".txt" required>
+                    </div>
+                    <button class="boton3" type="submit">Enviar</button>
+                </form>
+            </div>
+            
+            <button class="boton2" onclick="mostrarOpciones('opciones2')">DESENCRIPTAR</button>
+            <div id="opciones2" class="ventana2">
+                <button class="close-btn2">&times;</button>
+                <form action="/Desencriptado" method="POST" enctype="multipart/form-data">
+                    <div class="Text_Dentro">
+                        <label for="archivo">Archivo:</label>
+                        <input type="file" id="uploadFile2" name="uploadFile2" accept=".enc" required>
+                    </div>
+                    <div class="Text_Dentro">
+                        <label for="numero3">Ingrese su Clave Privada:</label>
+                        <input class="form-control-sm" type="number" id="numero3" name="numero3" required>
+                        <input class="form-control-sm" type="number" id="numero4" name="numero4" required>
+                    </div>
+                    <button class="boton3" type="submit">DESENCRIPTAR</button>
+                </form>
+            </div>
+        </div>
+
+<section>
+    <script>
+		document.querySelector('.close-btn1').addEventListener('click', function() {document.querySelector('.ventana1').style.display = 'none';});
+        document.querySelector('.close-btn2').addEventListener('click', function() {document.querySelector('.ventana2').style.display = 'none';});
+
+	</script>
+    <script>
+        function mostrarOpciones(id) {
+            var opciones = document.getElementById(id);
+            if (opciones.style.display === "none") {
+                opciones.style.display = "block";
+            } else {
+                opciones.style.display = "none";
+            }
+        }
+    </script>
+</section>    
+    
+</section>
+
+<div class="contenedor sombra">
+    <h2 class="title2"> Servicios </h2>
+    <main class="servicios">
+            <div class="servicio">
+                <h3>Encriptado de mensajes</h3>
+                <div class="iconos">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-key" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="8" cy="15" r="4" />
+                    <line x1="10.85" y1="12.15" x2="19" y2="4" />
+                    <line x1="18" y1="5" x2="20" y2="7" />
+                    <line x1="15" y1="8" x2="17" y2="10" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="5" y="11" width="14" height="10" rx="2" />
+                        <circle cx="12" cy="16" r="1" />
+                        <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+                    </svg>
+                </div>
+                <!-- MENSAJE PARA EL LADO DE SERVICIOS DE ENCRIPTADO -->
+                <p>Ut congue ligula sapien, ac aliquet erat viverra a. Nulla rhoncus hendrerit fringilla. Mauris tempus sagittis libero, eget finibus sem aliquet eget.</p>
+            </div>
+            
+            <div class="servicio">
+                <h3>Desencriptado de mensajes</h3>
+                <div class="iconos">
+                    <!-- https://tablericons.com/ -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock-open" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="5" y="11" width="14" height="10" rx="2" />
+                        <circle cx="12" cy="16" r="1" />
+                        <path d="M8 11v-5a4 4 0 0 1 8 0" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 20l-3 -3h-2a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-2l-3 3" />
+                            <line x1="8" y1="9" x2="16" y2="9" />
+                            <line x1="8" y1="13" x2="14" y2="13" />
+                        </svg>
+                </div>
+                <!-- MENSAJE PARA EL LADO DE SERVICIOS DE DESENCRIPTADO -->
+                <p>Ut congue ligula sapien, ac aliquet erat viverra a. Nulla rhoncus hendrerit fringilla. Mauris tempus sagittis libero, eget finibus sem aliquet eget.</p>
+            </div>
+
+            <div class="servicio">
+                <h3>Matemática Computacional</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ruler-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M17 3l4 4l-14 14l-4 -4z" />
+                        <path d="M16 7l-1.5 -1.5" />
+                        <path d="M13 10l-1.5 -1.5" />
+                        <path d="M10 13l-1.5 -1.5" />
+                        <path d="M7 16l-1.5 -1.5" />
+                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-subscript" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M5 7l8 10m-8 0l8 -10" />
+                            <path d="M21 20h-4l3.5 -4a1.73 1.73 0 0 0 -3.5 -2" />
+                        </svg>
+                </div>
+                <!-- MENSAJE PARA EL LADO DE SERVICIOS DE MATE COMPUTACIONAL -->
+                <p>Ut congue ligula sapien, ac aliquet erat viverra a. Nulla rhoncus hendrerit fringilla. Mauris tempus sagittis libero, eget finibus sem aliquet eget.</p>
+            </div>
+    </main>
+
+    <div id="contacto" class="contacto">
+        <h2 class="title2">Contacto</h2>
+        <form class="formulario" action="#" method="POST">
+            <legend>Contactános llenando todos los campos</legend>
+
+            <div class="contenedor-campos">
+                <div class="campo">
+                    <label>Nombre</label>
+
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="campo">
+                    <label>Teléfono</label>
+
+                    <input type="tel" name="telefono" placeholder="Teléfono">
+                </div>
+                <div class="campo w-100">
+                    <label>Correo</label>
+
+                    <input type="mail" name="correo" placeholder="Mail">
+                </div>
+                <div class="campo w-100">
+                    <label>Mensaje:</label>
+                    <input type="Mensaje" name="mensaje" placeholder="Mensaje">
+                </div>
+            </div><!--.contenedor-campos-->
+            <div class="enviar">
+                <input class="boton" type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+</div>
+    <footer class="footer">
+        <p2> Todos los derechos reservados. Salvador Yrribarren y Cesar Morales, estudiantes de Ingeneria de Sistemas de la UPC.</p2>
+    </footer>
+</body>
+</html>
